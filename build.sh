@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
-set -e
+set -ex
 
-docker build --squash --tag pklaus/mvd_epics:debian-jessie .
+export DOCKER_BUILDKIT=1
+docker build --pull --progress=plain --tag pklaus/mvd_epics:debian-jessie .
