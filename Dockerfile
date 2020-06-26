@@ -1,10 +1,6 @@
-FROM {{ base_img }}
+FROM pklaus/epics_synapps:debian-jessie
 
 MAINTAINER Philipp Klaus <philipp.l.klaus@web.de>
-
-{% if cross_build %}
-RUN [ "cross-build-start" ]
-{% endif %}
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -yq \
