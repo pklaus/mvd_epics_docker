@@ -27,6 +27,7 @@ RUN set -x \
         'MODULES=/epics/modules' \
         'SUPPORT=$(MODULES)' \
         'SNCSEQ=$(SUPPORT)/sncseq-2-2-8' \
+        'CALC=$(SUPPORT)/calc-R3-7-4' \
         'ASYN=$(SUPPORT)/asyn-R4-38' \
         'STREAM=$(SUPPORT)/StreamDevice-2-8-13' \
         ; \
