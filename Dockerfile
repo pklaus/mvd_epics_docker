@@ -1,7 +1,7 @@
 # ======================================
 # First Stage: Get mvd_epics source code
 # ======================================
-FROM debian:10-slim AS download-extract
+FROM debian:10-slim AS fetch-repo
 RUN apt-get update && apt-get install -y git
 WORKDIR /var/cache
 RUN git clone git://jspc29.x-matter.uni-frankfurt.de/projects/mvd_epics.git \
@@ -14,7 +14,7 @@ RUN git clone git://jspc29.x-matter.uni-frankfurt.de/projects/mvd_epics.git \
 # ===========================
 FROM pklaus/epics_contapps:1-0-0 AS final
 
-COPY --from=download-extract --chown=scs:users /var/cache/mvd_epics /epics/iocs/mvd_epics
+COPY --from=fetch-repo --chown=scs:users /var/cache/mvd_epics /epics/iocs/mvd_epics
 
 WORKDIR /epics/iocs/mvd_epics
 
