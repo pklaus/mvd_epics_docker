@@ -12,7 +12,7 @@ RUN git clone git://jspc29.x-matter.uni-frankfurt.de/projects/mvd_epics.git \
 # ===========================
 # Final Build Stage with IOCs
 # ===========================
-FROM pklaus/epics_contapps:1-0-0 AS final
+FROM pklaus/epics_contapps:1-0-1 AS final
 
 COPY --from=fetch-repo --chown=scs:users /var/cache/mvd_epics /epics/iocs/mvd_epics
 

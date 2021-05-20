@@ -18,4 +18,4 @@ docker buildx inspect epics_builder || \
 docker buildx use epics_builder
 docker buildx inspect --bootstrap epics_builder
 
-docker buildx build --pull --push --platform $PLATFORMS --tag pklaus/mvd_epics:1-0-0 .
+docker buildx build --pull --push --platform $PLATFORMS --tag pklaus/mvd_epics:1-0-1 .
