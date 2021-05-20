@@ -2,14 +2,8 @@
 # First Stage: Get mvd_epics source code
 # ======================================
 FROM debian:10-slim AS download-extract
-
-RUN apt-get update \
- && apt-get install --no-install-recommends -yq \
-  git \
- && apt-get clean && rm -rf /var/lib/apt/lists/* && rm -rf /var/cache/apt
-
+RUN apt-get update && apt-get install -y git
 WORKDIR /var/cache
-
 RUN git clone git://jspc29.x-matter.uni-frankfurt.de/projects/mvd_epics.git \
  && cd mvd_epics \
  && rm -rf .git
